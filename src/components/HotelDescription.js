@@ -1,26 +1,49 @@
 import React from 'react'
 
-export default function HotelDescription() {
+export default function HotelDescription({onClicBtn,hotelData, handleBookBtn}) {
   return (
-    <div>
-      <h1>Hotel Description</h1>
-      <form action="">
-        <table>
-            <tr>
-                <td><label htmlFor="hotel-name">Hotel Name:</label></td>
-                <td><input type="text" value={''} /></td>
-                <td><label htmlFor="hotel-name">Hotel Description:</label></td>
-                <td><textarea placeholder='Hotel Description:' value={''} /></td>
-                <td><label htmlFor="hotel-name">Hotel Experience Level:</label></td>
-                <td>   <select name="" id="">
-                    <option value="budget">budget</option>
-                    <option value="business">business</option>
-                    <option value="luxury">luxury</option>
-                    </select></td>
-
-            </tr>
-        </table>
-      </form>
-    </div>
+<div>
+              <button onClick={onClicBtn}>Return to Results</button>
+          <h3>Hotels Description</h3>
+          <table border={2}>
+            <thead>
+              <tr>
+                <th>Hotel Name</th>
+                <th>Long Description</th>
+                <th>Hotel Image</th>
+                <th>Experience</th>
+                <th>Location</th>
+                <th>Swimming Pool</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {hotelData.map((item) => (
+                <tr>
+                  <>
+                    <td>{item.hotel_name}</td>
+                    <td>
+                      Hotel Swiss is a 2-star property located in Karachi. With
+                      free WiFi, this 2-star hotel offers a shared lounge and
+                      room service. The property has a 24-hour front desk and a
+                      concierge service for guests.
+                      All rooms feature a private bathroom, free toiletries and
+                      bed linen. A halal breakfast is available every morning at
+                      Hotel Swiss. The nearest airport is Jinnah Internatio nal
+                      Airport, 8.7 miles from the accommo dation
+                    </td>
+                    <td>{item.thumbnail_image}</td>
+                    <td>{item.experience}</td>
+                    <td>{item.city}</td>
+                    <td>{item.pool}</td>
+                    <td>{item.price}</td>
+                    <td><button onClick={()=> handleBookBtn(item.price)} type='button' >Book Now</button></td>
+                  </>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
   )
 }
