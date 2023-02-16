@@ -1,0 +1,30 @@
+body {
+    background: linear-gradient(90deg, #7250d5 0, #aa47a5 101%, #f43a67 90%);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 4%;
+}
+
+.heading {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: #d7c460;
+}
+.formLabel {
+    padding: 0 10px;
+font-weight: 500;
+color: white;
+}
+.selectField {
+    background-color: #3b343e85;
+border: none;
+border-radius: 15px;
+width: 100px;
+color: white;
+padding: 7px;
+text-align: center;
+}

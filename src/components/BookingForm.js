@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import HotelMainPage from './HotelMainPage';
+import styles from './BookingForm.module.css'
+
 
 let curr =new Date(Date.now()).toISOString()
 let current = curr.substring(0,10).replaceAll('-','')

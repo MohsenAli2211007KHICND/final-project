@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styles from './HotelDescription.module.css'
 export default function HotelDescription({onClicBtn,hotelData, handleBookBtn}) {
   return (
 <div>

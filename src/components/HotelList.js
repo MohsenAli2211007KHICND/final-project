@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './HotelList.module.css'
 
 export default function HotelList({hotelData, handleHotelNameBtn, handleBookBtn}) {
     return (

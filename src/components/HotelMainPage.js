@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import BookingForm from "./BookingForm";
 import HotelDescription from "./HotelDescription";
 import HotelList from "./HotelList";
+import styles from './HotelMainPage.module.css'
 
 const hotelSerchData = [
     {
@@ -132,23 +133,24 @@ export default function HotelMainPage() {
     }
 
     return (
-        <div>
-            <div>
+      <>
+       <div style={{backgroundColor: "#4d3fb375"}}>
+            <div className={styles.navbar}>
+            <h1 className={styles.heading}>Exotourista</h1>
                 <form action="">
-                    <h1>Exotourista</h1>
-                    <label htmlFor="city">City:</label>
-                    <select name="" id="" onChange={handleCity}>
+                    <label htmlFor="city" className={styles.formLabel}>City:</label>
+                    <select className={styles.selectField} name="" id="" onChange={handleCity}>
                         <option value={city}>karachi</option>
                         <option value={city}>Islamabad</option>
                         <option value={city}>Lahore</option>
                     </select>
-                    <label htmlFor="hotel-experience">Hotel Experience:</label>
-                    <select name="" id="" onChange={handleExp}>
+                    <label htmlFor="hotel-experience" className={styles.formLabel}>Hotel Experience:</label>
+                    <select className={styles.selectField} name="" id="" onChange={handleExp}>
                         <option value={hotelExp}>budget</option>
                         <option value={hotelExp}>business</option>
                         <option value={hotelExp}>luxury</option>
                     </select>
-                    <label htmlFor="swimming-pool">Swimming Pool:</label>
+                    <label htmlFor="swimming-pool" className={styles.formLabel}>Swimming Pool:</label>
                     <input
                         type="checkbox"
                         checked={pool === "Yes"}
@@ -159,7 +161,7 @@ export default function HotelMainPage() {
                     <input
                         type="checkbox"
                         checked={pool === "No"}
-                        value={"No"}
+                        value={"No"}s
                         onChange={handlePool}
                     />{" "}
                     <span>No</span>
@@ -167,6 +169,7 @@ export default function HotelMainPage() {
                         Search
                     </button>
                 </form>
+            </div>
             </div>
             {//**********************************Hotel List*********************************************************/
             }
@@ -176,7 +179,6 @@ export default function HotelMainPage() {
             }
             {moreDescription ? <HotelDescription onClicBtn={onClicBtn} hotelData={hotelData} handleBookBtn={handleBookBtn} /> : null}
             {showBookingForm ? <BookingForm price={hotelPrice} /> : null}
-
-        </div>
+       </>
     );
 }
