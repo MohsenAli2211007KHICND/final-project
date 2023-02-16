@@ -14,17 +14,44 @@ body {
     text-transform: uppercase;
     color: #d7c460;
 }
+
 .formLabel {
     padding: 0 10px;
-font-weight: 500;
-color: white;
+    font-weight: 500;
+    color: white;
 }
+
 .selectField {
     background-color: #3b343e85;
-border: none;
-border-radius: 15px;
-width: 100px;
-color: white;
-padding: 7px;
-text-align: center;
+    border: none;
+    border-radius: 15px;
+    width: 100px;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.checkOption {
+    padding: 10px 0px;
+    margin-right: 12px;
+    font-weight: 500;
+    color: white;
+}
+
+.searchBtn {
+    width: 100px;
+    height: 30px;
+    font-weight: 600;
+    background-color: #8e94e6;
+    border: none;
+    border-radius: 40px;
+    color: #1b0d0d;
+    transition: ease-in-out ;
+    transition-duration: 500ms;
+}
+.searchBtn:hover{
+    background-color: #322b35fd;
+    color: #b4b4b6;
+    cursor: pointer;
 }

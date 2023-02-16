@@ -3,11 +3,15 @@ import BookingForm from "./BookingForm";
 import HotelDescription from "./HotelDescription";
 import HotelList from "./HotelList";
 import styles from './HotelMainPage.module.css'
+import logo1 from './imges/Logo1.png'
+import logo2 from './imges/Logo2.png'
+import logo3 from './imges/Logo3.png'
+
 
 const hotelSerchData = [
     {
         id: 1,
-        thumbnail_image: "img1",
+        thumbnail_image: logo1,
         hotel_name: "PC Hotel",
         description: "PC hotel short description",
         city: "Karachi",
@@ -17,7 +21,7 @@ const hotelSerchData = [
     },
     {
         id: 2,
-        thumbnail_image: "img2",
+        thumbnail_image: logo2,
         hotel_name: "DC Hotel",
         description: "DC hotel short description",
         city: "Turbat",
@@ -27,7 +31,7 @@ const hotelSerchData = [
     },
     {
         id: 3,
-        thumbnail_image: "img3",
+        thumbnail_image: logo3,
         hotel_name: "GC Hotel",
         description: "GC hotel short description",
         city: "Islamabad",
@@ -157,15 +161,15 @@ export default function HotelMainPage() {
                         value={"Yes"}
                         onChange={handlePool}
                     />
-                    <span>Yes</span>
+                    <span className={styles.checkOption}>Yes</span>
                     <input
                         type="checkbox"
                         checked={pool === "No"}
                         value={"No"}s
                         onChange={handlePool}
                     />{" "}
-                    <span>No</span>
-                    <button type="button" onClick={onClicBtn}>
+                    <span className={styles.checkOption}>No</span>
+                    <button type="button" onClick={onClicBtn} className={styles.searchBtn}>
                         Search
                     </button>
                 </form>
